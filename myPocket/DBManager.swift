@@ -37,7 +37,7 @@ import FMDB
             if database != nil {
                 // Open the database.
                 if database.open() {
-                    let createEntriesTableQuery = "create table entries (\(field_EntryID) integer primary key autoincrement not null, \(field_EntryType) text not null, \(field_EntryTitle) bool not null default 0, \(field_EntryAmount) integer not null)"
+                    let createEntriesTableQuery = "create table entries (\(field_EntryID) integer primary key autoincrement not null, \(field_EntryType) bool not null default 0, \(field_EntryTitle) text not null,  \(field_EntryAmount) integer not null)"
                     do {
                         try database.executeUpdate(createEntriesTableQuery, values: nil)
                         created = true
